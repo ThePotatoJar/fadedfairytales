@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faded Fairytales</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Styling for the header */
+    .header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Styling for the dropdown menu */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Styling for the main content area */
+    .content {
+      margin: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    /* Styling for the footer */
+    .footer {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>Welcome to Faded Fairytales!</h1>
+  </div>
+
+  <!-- Dropdown menu -->
+  <div class="dropdown">
+    <button class="dropdown-btn">Menu</button>
+    <div class="dropdown-content">
+      <a href="catalog.html">Catalog</a>
+      <a href="categorys.html">Categories</a>
+      <a href="order-history.html">Order History</a>
+    </div>
+  </div>
+
+  <!-- Main content area -->
+  <div class="content">
+    <h2>Item Listings:</h2>
+    <ul id="item-list"></ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2023 Faded Fairytales. All rights reserved.
+  </div>
+
+  <!-- JavaScript code to update item listings -->
+  <script>
+    // Sample data for item listings
+    var itemListings = [
+      'Item 1',
+      'Item 2',
+      'Item 3',
+      'Item 4',
+      'Item 5'
+    ];
+
+    // Function to update item listings
+    function updateItemListing() {
+      var itemListElement = document.getElementById('item-list');
+      itemListElement.innerHTML = '';
+
+      for (var i = 0; i < itemListings.length; i++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = itemListings[i];
+        itemListElement.appendChild(listItem);
+      }
+    }
+
+    // Call the update function to initially populate the item listings
+    updateItemListing();
+  </script>
+</body>
+</html>
